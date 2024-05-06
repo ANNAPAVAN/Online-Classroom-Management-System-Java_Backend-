@@ -87,7 +87,7 @@ public class MyController {
 	    return response;		
 	}
 	
-//	http://localhost:3025/api/teach/updatetask?Id=10
+//	http://localhost:3025/api/teach/updatetask?Id=8
 	@PostMapping("/api/teach/updatetask")
 	public Map<String, Object> updateTask(@RequestBody Task task, @RequestParam int Id, @RequestHeader(name = "Authorization") String token) throws Exception{
 		Map<String, Object> response = new HashMap<>();
@@ -102,7 +102,7 @@ public class MyController {
 	    return response;	
 	}
 	
-//	http://localhost:3025/api/teach/deletetask?Id=9
+//	http://localhost:3025/api/teach/deletetask?Id=8
 	@PostMapping("/api/teach/deletetask")
 	public Map<String, Object> deleteTask(@RequestParam int Id, @RequestHeader(name = "Authorization") String token) throws Exception{
 		Map<String, Object> response = new HashMap<>();
@@ -183,7 +183,7 @@ public class MyController {
 	
 	@GetMapping("/api/std/getallstdtasks")
 	public Map<String, Object> getAllStdTasks(@RequestParam int page,@RequestHeader(name = "Authorization") String token) throws Exception{
-		System.out.println("api request ----------------");
+		
 		if (!allowRequest(token)) {
             return createRateLimitResponse();
         }
